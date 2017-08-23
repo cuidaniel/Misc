@@ -47,6 +47,11 @@ for gene in geneList:
         if gene.strip() == line[0]:
             synID = line[2];
             break;
+        else:
+        	synID = "notFound";
+    if synID == "notFound":
+    	print(gene.strip() + " was not found.");
+    	break;
     IDfile.close();
     entity = syn.get(synID, downloadLocation="/usr/local/hotspot3d/preprocess/prioritization");
 
