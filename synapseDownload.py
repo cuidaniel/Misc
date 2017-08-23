@@ -38,6 +38,7 @@ def login( creds ):
 syn = login(creds)
 
 # By default get the latest version. Add version=N if needed
+entity = syn.get("syn9704852", downloadLocation="/usr/local/hotspot3d/preprocess");
 geneList = open(sys.argv[1]);
 for gene in geneList:
     IDfile = open("/usr/local/Misc/gene_ID.txt");
@@ -50,5 +51,5 @@ for gene in geneList:
     entity = syn.get(synID, downloadLocation="/usr/local/hotspot3d/preprocess/prioritization");
 
 # Unzip downloaded things
-os.system("cd /usr/local/hotspot3d/preprocess/prioritization");
+os.chdir("/usr/local/hotspot3d/preprocess/prioritization");
 os.system("gzip -d *");
