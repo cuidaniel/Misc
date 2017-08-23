@@ -43,8 +43,12 @@ for gene in geneList:
     IDfile = open("/usr/local/Misc/gene_ID.txt");
     for line in IDfile:
         line = line.strip().split();
-        if gene == line[0]:
+        if gene.strip() == line[0]:
             synID = line[2];
             break;
     IDfile.close();
     entity = syn.get(synID, downloadLocation="/usr/local/hotspot3d/preprocess/prioritization");
+
+# Unzip downloaded things
+os.system("cd /usr/local/hotspot3d/preprocess/prioritization");
+os.system("gzip -d *");
