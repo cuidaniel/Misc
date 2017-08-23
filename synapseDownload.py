@@ -38,7 +38,8 @@ def login( creds ):
 syn = login(creds)
 
 # By default get the latest version. Add version=N if needed
-for gene in sys.argv[1]:
+geneList = open(sys.argv[1]);
+for gene in geneList:
     IDfile = open("/usr/local/Misc/gene_ID.txt");
     for line in IDfile:
         line = line.strip().split();
