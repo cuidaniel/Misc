@@ -41,7 +41,7 @@ syn = login(creds)
 entity = syn.get("syn9704852", downloadLocation="/usr/local/hotspot3d/preprocess");
 geneList = open(sys.argv[1]);
 for gene in geneList:
-    IDfile = open("/usr/local/Misc/gene_ID.txt");
+    IDfile = open("/usr/local/hotspot3d_synapse/gene_ID.txt");
     for line in IDfile:
         line = line.strip().split();
         if gene.strip() == line[0]:
